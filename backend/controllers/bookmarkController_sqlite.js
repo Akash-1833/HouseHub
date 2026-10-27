@@ -45,7 +45,7 @@ exports.toggleBookmark = (req, res) => {
  * Get all bookmarked properties for current user
  * GET /api/bookmarks
  */
-exports.getBookmarks = (req, res) => {
+exports.getUserBookmarks = (req, res) => {
   try {
     const userId = req.user.userId;
 
@@ -79,6 +79,9 @@ exports.getBookmarks = (req, res) => {
     res.status(500).json({ error: 'Failed to fetch bookmarks' });
   }
 };
+
+// Alias for backwards compatibility
+exports.getBookmarks = exports.getUserBookmarks;
 
 /**
  * Check if property is bookmarked

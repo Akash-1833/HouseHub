@@ -180,6 +180,9 @@ exports.getConversation = (req, res) => {
   }
 };
 
+// Alias for routes/messages.js compatibility
+exports.getConversationMessages = exports.getConversation;
+
 /**
  * Get unread message count
  * GET /api/messages/unread
